@@ -170,112 +170,91 @@ p {
   margin-bottom: 14px;
 }
 
-/* --- 6. Hero Section --- */
-.hero {
-  background: #A81C0D;
-  color: #ffffff;
-  text-align: center;
-  padding: 80px 0;
+/* --- 6. Hero Banner (full-width image-style) --- */
+.hero-banner {
+  background: linear-gradient(135deg, #1a0a08 0%, #A81C0D 40%, #d4a574 70%, #f5c882 100%);
+  padding: 0;
+  overflow: hidden;
 }
 
-.hero h1 {
-  color: #ffffff;
-  font-size: 42px;
-  padding-bottom: 12px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.92;
-  max-width: 600px;
+.hero-banner-inner {
+  max-width: 1080px;
+  width: 80%;
   margin: 0 auto;
+  padding: 100px 0;
+  position: relative;
 }
 
-/* --- 7. Services Grid --- */
-.services {
-  padding: 60px 0;
+.hero-banner-text {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.2;
+  display: block;
+  max-width: 80%;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.services h2 {
-  text-align: center;
-  margin-bottom: 40px;
+/* --- 7. Home Content (2/3 + 1/3 layout) --- */
+.home-content {
+  padding: 50px 0;
+  background: #ffffff;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+.content-row {
+  display: flex;
+  gap: 40px;
+  padding: 3px 0 25px;
 }
 
-.service-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 32px 24px;
-  text-align: center;
-  transition: box-shadow 0.2s;
+.content-main {
+  flex: 2;
 }
 
-.service-card:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+.content-main h1 {
+  font-size: 36px;
+  color: #A81C0D;
+  line-height: 1em;
+  padding-bottom: 10px;
 }
 
-.service-icon {
-  font-size: 40px;
-  margin-bottom: 14px;
+.content-main p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7em;
+  color: #000000;
 }
 
-.service-card h3 {
-  margin-bottom: 8px;
+.content-sidebar {
+  flex: 1;
 }
 
-.service-card p {
-  margin-bottom: 0;
-  font-size: 13px;
-}
-
-/* --- 8. CTA Section --- */
-.cta {
-  background: #f5f5f5;
-  text-align: center;
-  padding: 60px 0;
-}
-
-.cta h2 {
-  margin-bottom: 10px;
-}
-
-.cta p {
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-.btn {
-  display: inline-block;
+.sidebar-cta {
+  display: block;
   background: #A81C0D;
   color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 14px 36px;
-  border-radius: 4px;
+  text-align: center;
+  padding: 60px 30px;
   text-decoration: none;
   transition: background 0.2s;
 }
 
-.btn:hover {
+.sidebar-cta:hover {
   background: #8a1609;
   color: #ffffff;
 }
 
-/* --- 9. About Section --- */
-.about {
-  padding: 60px 0;
+.sidebar-cta-text {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
-.about h2 {
-  margin-bottom: 16px;
-}
-
-/* --- 10. Legal / Policy Content --- */
+/* --- 8. Legal / Policy Content --- */
 .legal {
   padding: 50px 0 60px;
 }
@@ -329,47 +308,10 @@ p {
   color: #333333;
 }
 
-/* --- 11. Footer --- */
+/* --- 9. Footer --- */
 .site-footer {
-  background: #222222;
-  color: #ffffff;
-  padding: 48px 0 0;
-  font-size: 14px;
-}
-
-.footer-columns {
-  display: flex;
-  gap: 40px;
-  padding-bottom: 36px;
-}
-
-.footer-col {
-  flex: 1;
-}
-
-.footer-col h3 {
-  color: #A81C0D;
-  font-size: 16px;
-  margin-bottom: 14px;
-}
-
-.footer-col ul {
-  list-style: none;
+  background: none;
   padding: 0;
-}
-
-.footer-col li {
-  margin-bottom: 6px;
-}
-
-.footer-col a {
-  color: #ffffff;
-  transition: opacity 0.2s;
-}
-
-.footer-col a:hover {
-  color: #ffffff;
-  opacity: 0.7;
 }
 
 .footer-bottom {
@@ -377,10 +319,10 @@ p {
   color: #ffffff;
   padding: 15px 0 5px;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
 }
 
-/* --- 12. Responsive --- */
+/* --- 10. Responsive --- */
 @media (max-width: 768px) {
   .main-nav {
     flex-wrap: wrap;
@@ -400,25 +342,38 @@ p {
     font-size: 26px;
   }
 
-  .hero {
-    padding: 50px 0;
+  .hero-banner-inner {
+    padding: 60px 0;
   }
 
-  .hero h1 {
-    font-size: 30px;
+  .hero-banner-text {
+    font-size: 26px;
+    max-width: 100%;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-columns {
+  .content-row {
     flex-direction: column;
-    gap: 28px;
+    gap: 30px;
+  }
+
+  .content-main p {
+    font-size: 16px;
+  }
+
+  .sidebar-cta {
+    padding: 40px 20px;
+  }
+
+  .sidebar-cta-text {
+    font-size: 22px;
   }
 
   h1 { font-size: 28px; }
   h2 { font-size: 22px; }
+
+  .content-main h1 {
+    font-size: 28px;
+  }
 
   .legal h1 {
     font-size: 20px;
@@ -443,24 +398,29 @@ p {
     gap: 8px;
   }
 
-  .hero {
-    padding: 36px 0;
+  .hero-banner-inner {
+    padding: 40px 0;
+    width: 92%;
   }
 
-  .hero h1 {
+  .hero-banner-text {
+    font-size: 20px;
+  }
+
+  .content-main h1 {
     font-size: 24px;
   }
 
-  .hero p {
+  .content-main p {
     font-size: 15px;
   }
 
-  .service-card {
-    padding: 22px 16px;
+  .sidebar-cta {
+    padding: 30px 16px;
   }
 
-  .cta {
-    padding: 40px 0;
+  .sidebar-cta-text {
+    font-size: 20px;
   }
 
   .legal {
