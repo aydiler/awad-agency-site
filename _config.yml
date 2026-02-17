@@ -1,0 +1,4 @@
+exclude:
+  - docs
+  - "*.md"
+  - LICENSE
