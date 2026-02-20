@@ -2,3 +2,4 @@ exclude:
   - docs
   - "*.md"
   - LICENSE
+  - deploy.sh
