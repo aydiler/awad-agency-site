@@ -85,8 +85,19 @@ ul, ol {
   color: #A81C0D;
 }
 
-.top-bar a i {
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+
+.top-bar .icon {
   margin-right: 3px;
+}
+
+.icon-menu {
+  width: 22px;
+  height: 22px;
 }
 
 /* --- 4. Header & Nav --- */
@@ -110,7 +121,7 @@ ul, ol {
 }
 
 .logo {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 32px;
   font-weight: 700;
   color: #333333;
