@@ -1,0 +1,313 @@
+/* =============================================
+   Awad Agency — Form Styles
+   Reusable across quote, contact, and inline forms
+   ============================================= */
+
+/* --- Test page layout --- */
+.form-test-page {
+  flex: 1;
+  padding: 50px 0 60px;
+}
+
+/* --- Form Card (container) --- */
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 40px;
+  max-width: 640px;
+}
+
+.form-card-header {
+  margin-bottom: 28px;
+}
+
+.form-card-header h2 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.form-card-header p {
+  font-size: 15px;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+/* --- Form Fields --- */
+.form-row {
+  margin-bottom: 18px;
+}
+
+.form-row--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field label {
+  display: block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-field .required {
+  color: #A81C0D;
+}
+
+.form-field .optional {
+  font-weight: 400;
+  text-transform: none;
+  color: #999999;
+  font-size: 12px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  color: #333333;
+  background: #f9f9f9;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 12px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #A81C0D;
+  box-shadow: 0 0 0 3px rgba(168, 28, 13, 0.1);
+  background: #ffffff;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #b0b0b0;
+}
+
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1.4 0L6 4.6 10.6 0 12 1.4l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Honeypot — hidden from humans */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* --- Submit Button --- */
+.form-actions {
+  margin-top: 24px;
+}
+
+.form-submit {
+  display: inline-block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: #A81C0D;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 40px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.form-submit:hover {
+  background: #8a1609;
+}
+
+.form-submit:active {
+  transform: scale(0.98);
+}
+
+.form-submit:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Status Messages --- */
+.form-status {
+  min-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.form-status--success {
+  color: #2e7d32;
+}
+
+.form-status--error {
+  color: #c62828;
+}
+
+/* --- Disclaimer --- */
+.form-disclaimer {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* --- Compact variant (contact page) --- */
+.form-card--compact {
+  max-width: 560px;
+}
+
+/* --- Inline variant (service page CTA) --- */
+.form-card--inline {
+  max-width: 100%;
+  background: linear-gradient(135deg, #1a0a08 0%, #A81C0D 40%, #d4a574 70%, #f5c882 100%);
+  border: none;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.form-inline-header {
+  margin-bottom: 20px;
+}
+
+.form-inline-header h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.form-inline-header p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.form-row--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.form-row--inline .form-field {
+  flex: 1 1 200px;
+}
+
+.form-row--inline input,
+.form-row--inline select {
+  background: #ffffff;
+  border-color: transparent;
+  padding: 12px 14px;
+}
+
+.form-row--inline input:focus,
+.form-row--inline select:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  border-color: transparent;
+}
+
+.form-row--inline .form-submit {
+  background: #ffffff;
+  color: #A81C0D;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  padding: 12px 28px;
+}
+
+.form-row--inline .form-submit:hover {
+  background: #f0f0f0;
+}
+
+.form-card--inline .form-status--success {
+  color: #a5d6a7;
+}
+
+.form-card--inline .form-status--error {
+  color: #ffcdd2;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 28px 24px;
+  }
+
+  .form-card-header h2 {
+    font-size: 24px;
+  }
+
+  .form-row--2col {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-row--inline {
+    flex-direction: column;
+  }
+
+  .form-row--inline .form-submit {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .form-submit {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: 22px 18px;
+    border-radius: 6px;
+  }
+
+  .form-card-header h2 {
+    font-size: 22px;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+    padding: 12px;
+  }
+
+  .form-card--inline {
+    padding: 24px 18px;
+  }
+
+  .form-inline-header h3 {
+    font-size: 20px;
+  }
+}

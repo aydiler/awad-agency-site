@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /form-test.html
 Sitemap: https://www.awadinsurance.com/sitemap.xml

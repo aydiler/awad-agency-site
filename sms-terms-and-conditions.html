@@ -23,9 +23,9 @@
   <link rel="icon" type="image/png" href="images/aaa-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -43,19 +43,24 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="container">
+    <div class="container header-inner">
       <div class="header-logo">
         <img src="images/aaa-logo.png" alt="AAA — American Automobile Association">
       </div>
       <a href="index.html" class="logo">Awad <span>Agency</span></a>
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-          <li><a href="sms-privacy-policy.html"><i class="fa-solid fa-shield-halved"></i> SMS Privacy Policy</a></li>
-          <li><a href="sms-terms-and-conditions.html" class="active"><i class="fa-solid fa-file-contract"></i> SMS Terms &amp; Conditions</a></li>
-        </ul>
-      </nav>
     </div>
+    <nav class="nav-bar">
+      <div class="container nav-inner">
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sms-privacy-policy.html">SMS Privacy Policy</a></li>
+          <li><a href="sms-terms-and-conditions.html" class="active">SMS Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <!-- Legal Content -->
@@ -140,5 +145,13 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function () {
+      var nav = document.querySelector('.nav-bar');
+      var open = nav.classList.toggle('nav-open');
+      this.setAttribute('aria-expanded', open);
+      this.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+  </script>
 </body>
 </html>
