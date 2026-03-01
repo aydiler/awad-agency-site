@@ -1,0 +1,375 @@
+/* =============================================
+   Awad Agency — Service Page Styles
+   Used on auto-insurance.html (and future service pages)
+   ============================================= */
+
+/* --- Page Layout (sticky footer) --- */
+.service-page {
+  flex: 1;
+}
+
+/* --- Lead Paragraph --- */
+.service-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333333;
+  max-width: 800px;
+}
+
+/* --- Reusable Section Spacing --- */
+.service-section {
+  padding: 40px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.service-section:last-child {
+  border-bottom: none;
+}
+
+.service-section h2 {
+  margin-bottom: 18px;
+}
+
+.service-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+}
+
+.service-section ul,
+.service-section ol {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  margin-bottom: 14px;
+}
+
+.service-section li {
+  margin-bottom: 6px;
+}
+
+/* --- Callout (requirements table) --- */
+.service-section .callout {
+  overflow-x: auto;
+}
+
+.service-section .callout table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.service-section .callout th,
+.service-section .callout td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e0d8c0;
+}
+
+.service-section .callout th {
+  font-weight: 700;
+  color: #333333;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.service-section .callout td {
+  color: #444444;
+}
+
+/* --- Coverage Grid --- */
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.coverage-card {
+  border: 1px solid #e8e8e8;
+  padding: 24px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.coverage-card h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.coverage-card p {
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 0;
+}
+
+/* --- Steps Grid (How It Works) --- */
+.steps-grid {
+  display: flex;
+  gap: 30px;
+  text-align: center;
+}
+
+.step {
+  flex: 1;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #A81C0D;
+  color: #ffffff;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.step h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 15px;
+  color: #555555;
+  margin-bottom: 0;
+}
+
+/* --- FAQ Accordion --- */
+.faq-list {
+  max-width: 800px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid #e8e8e8;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 16px 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 400;
+  color: #A81C0D;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.faq-item[open] summary {
+  color: #A81C0D;
+}
+
+.faq-answer {
+  padding: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444444;
+  max-width: 720px;
+}
+
+.faq-answer p {
+  font-size: 15px;
+}
+
+/* --- Testimonials --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  border-left: 3px solid #A81C0D;
+  padding: 24px;
+  background: #fafafa;
+  border-radius: 0 6px 6px 0;
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444444;
+  margin-bottom: 14px;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 0;
+}
+
+.testimonial-location {
+  font-size: 13px;
+  color: #888888;
+  margin-bottom: 0;
+}
+
+/* --- Trust Badges --- */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 24px 0;
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.trust-badge-icon {
+  font-size: 32px;
+}
+
+.trust-badge span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* --- Service Area --- */
+.service-area-cities {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 15px;
+  color: #444444;
+}
+
+.service-area-cities li::before {
+  content: "\2022";
+  color: #A81C0D;
+  margin-right: 8px;
+}
+
+/* --- Bottom CTA Section --- */
+.cta-bottom {
+  padding: 50px 0;
+  border-bottom: none;
+}
+
+.cta-bottom .form-card--inline {
+  margin: 0 auto;
+}
+
+.cta-contact {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 16px;
+  color: #444444;
+}
+
+.cta-contact a {
+  font-weight: 700;
+}
+
+/* --- Mid-section CTA link --- */
+.cta-inline {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #A81C0D;
+  font-size: 16px;
+}
+
+.cta-inline:hover {
+  color: #8a1609;
+}
+
+/* --- Hero subtitle for service pages --- */
+.hero-banner-sub {
+  display: block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 14px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive: 768px --- */
+@media (max-width: 768px) {
+  .service-section {
+    padding: 30px 0;
+  }
+
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-badges {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .service-intro {
+    font-size: 16px;
+  }
+}
+
+/* --- Responsive: 480px --- */
+@media (max-width: 480px) {
+  .service-section {
+    padding: 24px 0;
+  }
+
+  .coverage-card {
+    padding: 18px;
+  }
+
+  .trust-badges {
+    gap: 18px;
+  }
+
+  .cta-bottom {
+    padding: 30px 0;
+  }
+}
