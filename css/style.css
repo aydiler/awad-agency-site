@@ -40,6 +40,12 @@ a:hover {
   color: #8a1609;
 }
 
+/* Inline text links must be distinguishable by more than color */
+p a,
+.callout a {
+  text-decoration: underline;
+}
+
 strong {
   color: #333333;
 }
@@ -517,7 +523,7 @@ p {
   font-family: 'Lora', Georgia, "Times New Roman", serif;
   font-size: 18px;
   font-weight: 700;
-  color: #A81C0D;
+  color: #E8534A;
   margin-bottom: 14px;
 }
 

@@ -37,11 +37,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Open+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
   
-  <link rel="stylesheet" href="css/service.css?v=1">
+  <link rel="stylesheet" href="css/service.css?v=1" media="print" onload="this.media='all'">
   
-  <link rel="stylesheet" href="css/form.css?v=1">
+  <link rel="stylesheet" href="css/form.css?v=1" media="print" onload="this.media='all'">
   
   
 
@@ -102,6 +102,7 @@
   </header>
 
 
+  <main>
     <!-- Schema: BreadcrumbList -->
   <script type="application/ld+json">
   {
@@ -275,7 +276,7 @@
               </tr>
             </tbody>
           </table>
-          <p style="font-size:13px;color:#777;margin-top:10px;margin-bottom:0;">* Drivers may choose lower limits of $50,000/$100,000 by signing a waiver through the Michigan DIFS.</p>
+          <p style="font-size:13px;color:#595959;margin-top:10px;margin-bottom:0;">* Drivers may choose lower limits of $50,000/$100,000 by signing a waiver through the Michigan DIFS.</p>
         </div>
 
         <h3>PIP Coverage Levels After the 2019 Reform</h3>
@@ -532,7 +533,7 @@
                 <input type="tel" name="phone" required autocomplete="tel" placeholder="Phone Number">
               </div>
               <div class="form-field">
-                <select name="insuranceType">
+                <select name="insuranceType" aria-label="Insurance Type">
                   <option value="">Insurance Type</option>
                   <option value="Auto Insurance" selected>Auto</option>
                   <option value="Home Insurance">Home</option>
@@ -558,6 +559,7 @@
     </div>
   </div>
 
+  </main>
 
     <!-- Footer -->
   <footer class="site-footer">
