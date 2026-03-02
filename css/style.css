@@ -57,6 +57,7 @@ ul, ol {
 
 /* Sticky footer: main content stretches */
 .home-content,
+.home-sections,
 .legal {
   flex: 1;
 }
@@ -188,14 +189,41 @@ ul, ol {
   border-bottom-color: #A81C0D;
 }
 
-/* Dropdown prep (unused until Wave 1) */
+/* Dropdown */
 .main-nav .has-dropdown {
   position: relative;
 }
 
-.main-nav .has-dropdown > a .fa-chevron-down {
-  font-size: 0.7em;
-  margin-left: 4px;
+.dropdown-toggle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 14px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+  color: #A81C0D;
+  border-bottom-color: #A81C0D;
+}
+
+.chevron {
+  transition: transform 0.2s;
+}
+
+.has-dropdown.open .chevron {
+  transform: rotate(180deg);
 }
 
 .main-nav .dropdown {
@@ -226,7 +254,8 @@ ul, ol {
   color: #A81C0D;
 }
 
-.main-nav .has-dropdown:hover > .dropdown {
+.main-nav .has-dropdown:hover > .dropdown,
+.main-nav .has-dropdown.open > .dropdown {
   display: block;
 }
 
@@ -314,7 +343,7 @@ p {
 
 /* --- 7. Home Content (2/3 + 1/3 layout) --- */
 .home-content {
-  padding: 50px 0;
+  padding: 50px 0 20px;
   background: #ffffff;
 }
 
@@ -336,10 +365,10 @@ p {
 }
 
 .content-main p {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.7em;
-  color: #000000;
+  color: #444444;
 }
 
 .content-sidebar {
@@ -351,6 +380,63 @@ p {
   height: auto;
   display: block;
   border-radius: 4px;
+}
+
+/* --- 7b. Home Page Sections (below intro) --- */
+.home-sections {
+  padding: 0 0 10px;
+  background: #ffffff;
+}
+
+.home-content + .home-sections .service-section:first-child {
+  border-top: 1px solid #e8e8e8;
+}
+
+.home-services-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home-service-card {
+  display: block;
+  text-decoration: none;
+  transition: box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.home-service-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.home-service-card h3 {
+  color: #A81C0D;
+}
+
+.home-service-card p {
+  color: #555555;
+}
+
+.home-service-card--cta {
+  border-style: dashed;
+  background: #fafafa;
+}
+
+.home-benefits {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  margin-bottom: 24px;
+}
+
+.home-benefits li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .home-services-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- 8. Legal / Policy Content --- */
@@ -504,6 +590,38 @@ p {
     border-bottom: none;
   }
 
+  .dropdown-toggle {
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: none;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dropdown-toggle.active {
+    border-bottom: none;
+  }
+
+  .main-nav .dropdown {
+    position: static;
+    box-shadow: none;
+    min-width: auto;
+    padding: 0;
+  }
+
+  .main-nav .dropdown a {
+    padding: 10px 0 10px 24px;
+    font-size: 14px;
+  }
+
+  .main-nav .has-dropdown:hover > .dropdown {
+    display: none;
+  }
+
+  .main-nav .has-dropdown.open > .dropdown {
+    display: block;
+  }
+
   /* Header */
   .site-header {
     padding: 14px 0 0;
@@ -549,9 +667,6 @@ p {
     gap: 30px;
   }
 
-  .content-main p {
-    font-size: 16px;
-  }
 
   h1 { font-size: 28px; }
   h2 { font-size: 22px; }

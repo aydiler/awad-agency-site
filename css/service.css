@@ -355,6 +355,118 @@
   }
 }
 
+/* --- Agent Profile (About page) --- */
+.agent-profile {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.agent-photo {
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.agent-photo img {
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.agent-photo-placeholder {
+  width: 200px;
+  height: 240px;
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #999;
+  font-weight: 600;
+}
+
+.agent-details {
+  flex: 1;
+}
+
+.agent-details h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+.agent-credentials {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+
+.agent-credentials li {
+  padding: 6px 0;
+  font-size: 15px;
+  color: #444444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.agent-credentials li:last-child {
+  border-bottom: none;
+}
+
+.agent-contact {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+/* --- Office Info (About page) --- */
+.office-info {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.office-details {
+  flex: 1;
+}
+
+.office-details h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.office-details h3:not(:first-child) {
+  margin-top: 24px;
+}
+
+.office-map {
+  flex: 1;
+  min-width: 0;
+}
+
+.hours-table {
+  font-size: 15px;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 6px 20px 6px 0;
+  color: #444444;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hours-table td:first-child {
+  font-weight: 600;
+  color: #333333;
+  min-width: 110px;
+}
+
 /* --- Responsive: 480px --- */
 @media (max-width: 480px) {
   .service-section {
@@ -371,5 +483,26 @@
 
   .cta-bottom {
     padding: 30px 0;
+  }
+}
+
+/* --- Responsive: About page (768px) --- */
+@media (max-width: 768px) {
+  .agent-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .agent-credentials {
+    text-align: left;
+  }
+
+  .office-info {
+    flex-direction: column;
+  }
+
+  .office-map iframe {
+    height: 250px;
   }
 }

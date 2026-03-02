@@ -1,0 +1,130 @@
+/* =============================================
+   Awad Agency — Contact Page Styles
+   ============================================= */
+
+/* --- Contact Info Cards --- */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.contact-card {
+  text-align: center;
+  padding: 32px 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-card-icon {
+  margin-bottom: 14px;
+}
+
+.contact-card h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.contact-card-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #A81C0D;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+a.contact-card-value:hover {
+  color: #8a1609;
+}
+
+p.contact-card-value {
+  color: #333333;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 0;
+}
+
+.contact-card p a {
+  font-weight: 600;
+}
+
+/* --- Form + Map Layout --- */
+.contact-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contact-form-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-form-col .form-card--compact {
+  max-width: 100%;
+}
+
+.contact-map-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-map-wrap {
+  margin-bottom: 28px;
+}
+
+.contact-map-wrap iframe {
+  border-radius: 6px;
+  display: block;
+}
+
+/* --- Hours below map --- */
+.contact-hours h3 {
+  font-family: 'Lora', Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+.contact-hours-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #666666;
+  font-style: italic;
+}
+
+/* --- Responsive: 768px --- */
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-card {
+    padding: 24px 20px;
+  }
+
+  .contact-layout {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .contact-map-wrap iframe {
+    height: 250px;
+  }
+}
+
+/* --- Responsive: 480px --- */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 20px 16px;
+  }
+}
