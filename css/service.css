@@ -8,6 +8,29 @@
   flex: 1;
 }
 
+/* --- Service Intro with Illustration --- */
+.service-intro-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.service-intro-text {
+  flex: 1;
+}
+
+.service-intro-row .service-intro {
+  max-width: none;
+}
+
+.service-intro-img {
+  flex-shrink: 0;
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
 /* --- Lead Paragraph --- */
 .service-intro {
   font-size: 18px;
@@ -114,6 +137,12 @@
 
 .step {
   flex: 1;
+}
+
+.step-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 8px;
 }
 
 .step-number {
@@ -237,6 +266,13 @@
   margin-bottom: 0;
 }
 
+.testimonial-stars {
+  color: #f4b400;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
 /* --- Trust Badges --- */
 .trust-badges {
   display: flex;
@@ -255,7 +291,8 @@
 }
 
 .trust-badge-icon {
-  font-size: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .trust-badge span:last-child {
@@ -315,17 +352,6 @@
   color: #8a1609;
 }
 
-/* --- Hero subtitle for service pages --- */
-.hero-banner-sub {
-  display: block;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 14px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-}
-
 /* --- Responsive: 768px --- */
 @media (max-width: 768px) {
   .service-section {
@@ -352,6 +378,15 @@
 
   .service-intro {
     font-size: 16px;
+  }
+
+  .service-intro-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-intro-img {
+    display: none;
   }
 }
 

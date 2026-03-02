@@ -311,6 +311,24 @@ p {
   margin: 0 auto;
   padding: 100px 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 3;
+}
+
+.hero-illustration {
+  flex: 2;
+  max-width: 400px;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-banner-text {
@@ -321,7 +339,6 @@ p {
   text-transform: uppercase;
   line-height: 1.2;
   display: block;
-  max-width: 80%;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -345,6 +362,32 @@ p {
 .btn-quote:hover {
   background: #A81C0D;
   color: #ffffff;
+}
+
+/* --- Service Page Hero --- */
+.service-hero .hero-banner-inner {
+  flex-direction: column;
+  text-align: center;
+  padding: 60px 0;
+  gap: 0;
+}
+
+.service-hero .hero-banner-text {
+  font-size: 32px;
+}
+
+.service-hero .hero-banner-sub {
+  display: block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 12px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-hero .btn-quote {
+  margin-top: 20px;
 }
 
 /* --- 7. Home Content (2/3 + 1/3 layout) --- */
@@ -417,6 +460,12 @@ p {
 
 .home-service-card h3 {
   color: #A81C0D;
+}
+
+.service-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
 }
 
 .home-service-card p {
@@ -655,11 +704,28 @@ p {
   /* Other */
   .hero-banner-inner {
     padding: 60px 0;
+    gap: 24px;
+  }
+
+  .hero-illustration {
+    flex: 1;
+    max-width: 220px;
   }
 
   .hero-banner-text {
     font-size: 26px;
-    max-width: 100%;
+  }
+
+  .service-hero .hero-banner-text {
+    font-size: 24px;
+  }
+
+  .service-hero .hero-banner-sub {
+    font-size: 16px;
+  }
+
+  .service-hero .hero-banner-inner {
+    padding: 40px 0;
   }
 
   .btn-quote {
@@ -716,6 +782,10 @@ p {
   .hero-banner-inner {
     padding: 40px 0;
     width: 92%;
+  }
+
+  .hero-illustration {
+    display: none;
   }
 
   .hero-banner-text {

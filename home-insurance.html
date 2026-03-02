@@ -37,9 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Open+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
   
-  <link rel="stylesheet" href="css/service.css?v=1" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/service.css?v=2" media="print" onload="this.media='all'">
   
   <link rel="stylesheet" href="css/form.css?v=1" media="print" onload="this.media='all'">
   
@@ -67,7 +67,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="header-logo">
-        <img src="images/aaa-logo.webp" alt="AAA — American Automobile Association" width="200" height="200">
+        <picture>
+          <source srcset="images/aaa-logo.webp" type="image/webp">
+          <img src="images/aaa-logo.png" alt="AAA — American Automobile Association" width="200" height="200">
+        </picture>
       </div>
       <a href="index.html" class="logo">Awad <span>Agency</span></a>
     </div>
@@ -226,7 +229,7 @@
   </script>
 
   <!-- 1. Hero Banner -->
-  <section class="hero-banner">
+  <section class="hero-banner service-hero">
     <div class="hero-banner-inner">
       <span class="hero-banner-text">HOME INSURANCE IN SOUTHGATE, MI</span>
       <span class="hero-banner-sub">Protect your home with trusted AAA coverage from a local agency</span>
@@ -240,8 +243,16 @@
 
       <!-- 2. Answer-First Summary -->
       <section class="service-section">
-        <h1>Home Insurance in Southgate, Michigan</h1>
-        <p class="service-intro">Awad Insurance Agency helps Downriver Michigan families protect their homes through AAA and other top-rated carriers. As a locally owned independent agency, we compare rates, help you understand Michigan weather risks, and build the right homeowners policy for your property and budget.</p>
+        <div class="service-intro-row">
+          <div class="service-intro-text">
+            <h1>Home Insurance in Southgate, Michigan</h1>
+            <p class="service-intro">Awad Insurance Agency helps Downriver Michigan families protect their homes through AAA and other top-rated carriers. As a locally owned independent agency, we compare rates, help you understand Michigan weather risks, and build the right homeowners policy for your property and budget.</p>
+          </div>
+          <picture>
+            <source srcset="images/service-home.webp" type="image/webp">
+            <img src="images/service-home.png" alt="Home insurance illustration" class="service-intro-img" width="1024" height="1024" loading="lazy">
+          </picture>
+        </div>
       </section>
 
       <!-- 3. Michigan-Specific Considerations -->
@@ -382,15 +393,15 @@
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             <span>AAA Affiliated</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <span>5-Star Google Rating</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             <span>Licensed in Michigan</span>
           </div>
         </div>
@@ -401,16 +412,19 @@
         <h2>How It Works</h2>
         <div class="steps-grid">
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <div class="step-number">1</div>
             <h3>Tell Us About Your Home</h3>
             <p>Call, fill out the form below, or stop by our Southgate office. Tell us about your home, property, and coverage needs.</p>
           </div>
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
             <div class="step-number">2</div>
             <h3>We Compare Rates</h3>
             <p>We shop your policy across multiple carriers to find the best combination of coverage and price for your home.</p>
           </div>
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             <div class="step-number">3</div>
             <h3>You're Covered</h3>
             <p>Choose the policy that fits your budget. We handle the paperwork and your home is protected.</p>
@@ -472,16 +486,19 @@
         <h2>What Our Clients Say</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"As a realtor, I frequently interact with insurance agents. Chuck Danyo went above and beyond my expectations. He saved us considerable money and made the process seamless. Highly recommend!"</blockquote>
             <p class="testimonial-author">John Delia</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"I had a sit-down with Richelle and she got me to save money on my home and my auto. Customer service was excellent. Referred this office to a friend and Hamze took care of him!"</blockquote>
             <p class="testimonial-author">Mikey Ahmad</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"Great service and saved me substantial money."</blockquote>
             <p class="testimonial-author">Mark Garrison</p>
             <p class="testimonial-location">Google Review</p>

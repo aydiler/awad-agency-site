@@ -37,9 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Open+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
   
-  <link rel="stylesheet" href="css/service.css?v=1" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/service.css?v=2" media="print" onload="this.media='all'">
   
   <link rel="stylesheet" href="css/form.css?v=1" media="print" onload="this.media='all'">
   
@@ -67,7 +67,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="header-logo">
-        <img src="images/aaa-logo.webp" alt="AAA — American Automobile Association" width="200" height="200">
+        <picture>
+          <source srcset="images/aaa-logo.webp" type="image/webp">
+          <img src="images/aaa-logo.png" alt="AAA — American Automobile Association" width="200" height="200">
+        </picture>
       </div>
       <a href="index.html" class="logo">Awad <span>Agency</span></a>
     </div>
@@ -173,7 +176,7 @@
   </script>
 
   <!-- 1. Hero Banner -->
-  <section class="hero-banner">
+  <section class="hero-banner service-hero">
     <div class="hero-banner-inner">
       <span class="hero-banner-text">ABOUT AWAD INSURANCE AGENCY</span>
       <span class="hero-banner-sub">Your trusted AAA insurance team in Southgate, Michigan</span>
@@ -230,7 +233,10 @@
 
         <div class="agent-profile">
           <div class="agent-photo">
-            <img src="images/storefront.webp" alt="Awad Agency storefront with illuminated AAA sign in Southgate, Michigan" width="800" height="800" loading="lazy">
+            <picture>
+              <source srcset="images/storefront.webp" type="image/webp">
+              <img src="images/storefront.jpg" alt="Awad Agency storefront with illuminated AAA sign in Southgate, Michigan" width="800" height="800" loading="lazy">
+            </picture>
           </div>
           <div class="agent-details">
             <h3>Our Agency</h3>
@@ -280,11 +286,11 @@
             <span>AAA Affiliated</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <span>5.0 Google Rating</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             <span>Licensed in Michigan</span>
           </div>
         </div>
@@ -360,16 +366,19 @@
         <p>We're proud to maintain a <strong>5.0-star rating</strong> on Google. Here's what our clients have to say:</p>
         <div class="testimonials-grid">
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"We had such a great experience working with Chuck! He was incredibly helpful, responsive, and ended up saving us a significant amount of money on our insurance. Highly recommend!"</blockquote>
             <p class="testimonial-author">Dayna Danyo</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"Great experience with Awad Agency! They're the best AAA agency I have worked with, and Mike was incredibly helpful throughout the entire process. He made everything easy and stress-free. Highly recommend!"</blockquote>
             <p class="testimonial-author">N H</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"Hanz and his team were super helpful and professional. I recommended them to my friends and they did not disappoint!"</blockquote>
             <p class="testimonial-author">Victoria G</p>
             <p class="testimonial-location">Google Review</p>

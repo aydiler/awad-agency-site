@@ -37,9 +37,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Open+Sans:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
   
-  <link rel="stylesheet" href="css/service.css?v=1" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/service.css?v=2" media="print" onload="this.media='all'">
   
   <link rel="stylesheet" href="css/form.css?v=1" media="print" onload="this.media='all'">
   
@@ -111,7 +111,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="header-logo">
-        <img src="images/aaa-logo.webp" alt="AAA — American Automobile Association" width="200" height="200">
+        <picture>
+          <source srcset="images/aaa-logo.webp" type="image/webp">
+          <img src="images/aaa-logo.png" alt="AAA — American Automobile Association" width="200" height="200">
+        </picture>
       </div>
       <a href="index.html" class="logo">Awad <span>Agency</span></a>
     </div>
@@ -150,9 +153,46 @@
     <!-- Hero Banner -->
   <section class="hero-banner">
     <div class="hero-banner-inner">
-      <span class="hero-banner-text">YOUR TRUSTED INSURANCE AGENCY IN SOUTHGATE, MICHIGAN</span>
-      <span class="hero-banner-sub">AAA-affiliated. Locally owned. Serving Downriver families since day one.</span>
-      <a href="#quote" class="btn-quote">Get a Free Quote</a>
+      <div class="hero-text">
+        <span class="hero-banner-text">YOUR TRUSTED INSURANCE AGENCY IN SOUTHGATE, MICHIGAN</span>
+        <span class="hero-banner-sub">AAA-affiliated. Locally owned. Serving Downriver families since day one.</span>
+        <a href="#quote" class="btn-quote">Get a Free Quote</a>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="30 30 440 350">
+          <!-- Protective aura (shield silhouette behind scene) -->
+          <path d="M250,40 L110,82 L110,220 C110,310 250,365 250,365 C250,365 390,310 390,220 L390,82Z" fill="#ffffff" opacity="0.08"/>
+          <!-- House: roof -->
+          <path d="M150,190 L250,90 L350,190Z" fill="#ffffff" opacity="0.25"/>
+          <!-- House: chimney -->
+          <rect x="305" y="115" width="20" height="55" fill="#ffffff" opacity="0.2"/>
+          <rect x="302" y="110" width="26" height="7" rx="2" fill="#ffffff" opacity="0.22"/>
+          <!-- House: walls -->
+          <rect x="175" y="190" width="150" height="95" fill="#ffffff" opacity="0.18"/>
+          <!-- House: door -->
+          <rect x="228" y="230" width="44" height="55" rx="20" fill="#A81C0D" opacity="0.6"/>
+          <circle cx="260" cy="260" r="3" fill="#ffffff" opacity="0.7"/>
+          <!-- House: window left -->
+          <rect x="190" y="208" width="26" height="24" rx="3" fill="#ffffff" opacity="0.4"/>
+          <line x1="203" y1="208" x2="203" y2="232" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <line x1="190" y1="220" x2="216" y2="220" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <!-- House: window right -->
+          <rect x="284" y="208" width="26" height="24" rx="3" fill="#ffffff" opacity="0.4"/>
+          <line x1="297" y1="208" x2="297" y2="232" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <line x1="284" y1="220" x2="310" y2="220" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <!-- Ground -->
+          <ellipse cx="250" cy="370" rx="150" ry="8" fill="#ffffff" opacity="0.08"/>
+          <!-- Family: adult 1 -->
+          <circle cx="195" cy="275" r="22" fill="#ffffff" opacity="0.9"/>
+          <path d="M195,297 Q174,308 174,332 L174,368 Q174,371 177,371 L213,371 Q216,371 216,368 L216,332 Q216,308 195,297Z" fill="#ffffff" opacity="0.85"/>
+          <!-- Family: adult 2 -->
+          <circle cx="270" cy="278" r="20" fill="#ffffff" opacity="0.9"/>
+          <path d="M270,298 Q252,308 252,330 L252,365 Q252,368 255,368 L285,368 Q288,368 288,365 L288,330 Q288,308 270,298Z" fill="#ffffff" opacity="0.85"/>
+          <!-- Family: child -->
+          <circle cx="234" cy="305" r="16" fill="#ffffff" opacity="0.9"/>
+          <path d="M234,321 Q221,329 221,346 L221,365 Q221,368 224,368 L244,368 Q247,368 247,365 L247,346 Q247,329 234,321Z" fill="#ffffff" opacity="0.85"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -166,7 +206,10 @@
           <p>As an independent agency, we compare policies from multiple top-rated carriers to get you the best combination of coverage and price. Whether you need <a href="auto-insurance.html"><strong>auto</strong></a>, <a href="home-insurance.html"><strong>home</strong></a>, <a href="life-insurance.html"><strong>life</strong></a>, <a href="business-insurance.html"><strong>business</strong></a>, or <a href="umbrella-insurance.html"><strong>umbrella</strong></a> insurance, we'll build a plan that fits your needs and budget.</p>
         </div>
         <div class="content-sidebar">
-          <img src="images/sidebar-family.webp" alt="Happy family at home" class="sidebar-img" width="600" height="400" loading="lazy">
+          <picture>
+            <source srcset="images/sidebar-family.webp" type="image/webp">
+            <img src="images/sidebar-family.jpg" alt="Happy family at home" class="sidebar-img" width="600" height="400" loading="lazy">
+          </picture>
         </div>
       </div>
     </div>
@@ -182,26 +225,32 @@
 
         <div class="coverage-grid home-services-grid">
           <a href="auto-insurance.html" class="coverage-card home-service-card">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16C5.67 16 5 15.33 5 14.5S5.67 13 6.5 13 8 13.67 8 14.5 7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
             <h3>Auto Insurance</h3>
             <p>Michigan no-fault expertise, competitive rates, and AAA roadside assistance. We help you navigate PIP coverage levels and find the best price.</p>
           </a>
           <a href="home-insurance.html" class="coverage-card home-service-card">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
             <h3>Home Insurance</h3>
             <p>Protect your home against Michigan weather, theft, liability, and more. We cover dwelling, personal property, sewer backup, and additional structures.</p>
           </a>
           <a href="life-insurance.html" class="coverage-card home-service-card">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             <h3>Life Insurance</h3>
             <p>Term and whole life policies to protect your family's financial future. We help you determine the right coverage amount for your situation.</p>
           </a>
           <a href="business-insurance.html" class="coverage-card home-service-card">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 0h-4V5h4v2z"/></svg>
             <h3>Business Insurance</h3>
             <p>General liability, workers' compensation, commercial property, and BOP policies. Coverage for Michigan small businesses and contractors.</p>
           </a>
           <a href="umbrella-insurance.html" class="coverage-card home-service-card">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12h2c0-1.1.45-2.1 1.17-2.83S7.9 8 9 8s2.1.45 2.83 1.17L12 9.34V22h2V9.34l.17-.17C14.9 8.45 15.9 8 17 8s2.1.45 2.83 1.17S21 10.9 21 12h2c0-5.52-4.48-10-10-10z"/></svg>
             <h3>Umbrella Insurance</h3>
             <p>Extra liability protection beyond your auto and home policy limits. Affordable coverage that protects your assets and future earnings.</p>
           </a>
           <a href="contact.html" class="coverage-card home-service-card home-service-card--cta">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
             <h3>Need Something Else?</h3>
             <p>Renters, flood, recreational vehicles, and more. Contact us to discuss your coverage needs — we'll find the right policy for you.</p>
           </a>
@@ -222,19 +271,19 @@
 
         <div class="trust-badges">
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             <span>AAA Affiliated</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
             <span>5-Star Google Rating</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             <span>Licensed in Michigan</span>
           </div>
           <div class="trust-badge">
-            <span class="trust-badge-icon" aria-hidden="true">&#9733;</span>
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
             <span>Locally Owned</span>
           </div>
         </div>
@@ -245,16 +294,19 @@
         <h2>How It Works</h2>
         <div class="steps-grid">
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             <div class="step-number">1</div>
             <h3>Contact Us</h3>
             <p>Call, fill out the form below, or stop by our Southgate office. Tell us what you need covered.</p>
           </div>
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
             <div class="step-number">2</div>
             <h3>We Compare Rates</h3>
             <p>We shop your policy across multiple carriers to find the best combination of coverage and price.</p>
           </div>
           <div class="step">
+            <svg class="step-icon" viewBox="0 0 24 24" fill="#A81C0D" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             <div class="step-number">3</div>
             <h3>You're Covered</h3>
             <p>Choose the policy that fits your budget. We handle the paperwork and you walk away protected.</p>
@@ -267,16 +319,19 @@
         <h2>What Our Clients Say</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"Richelle was very kind! Made the whole vehicle insurance process very easy and straightforward and made sure I got the best value for my coverage."</blockquote>
             <p class="testimonial-author">Bashir</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"Amazing experience getting insurance from this agency. Very professional and they provided sound and honest advice."</blockquote>
             <p class="testimonial-author">Benjamin Rush</p>
             <p class="testimonial-location">Google Review</p>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <blockquote>"When a phone call ends with a savings of $1,300 and finding Mike who is amazing! He knows his business and all I can say is — sorry Jake from State Farm, you've been replaced!"</blockquote>
             <p class="testimonial-author">Kathy Burbo</p>
             <p class="testimonial-location">Google Review</p>
