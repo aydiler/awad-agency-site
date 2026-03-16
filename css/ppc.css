@@ -1,0 +1,681 @@
+/* =============================================
+   Awad Agency — PPC Landing Page Styles
+   No-nav, conversion-focused layout
+   ============================================= */
+
+/* --- Reset --- */
+.ppc-page *, .ppc-page *::before, .ppc-page *::after {
+  box-sizing: border-box;
+}
+
+/* --- Reset body for PPC --- */
+.ppc-page {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  color: #444444;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Minimal Header (no nav) --- */
+.ppc-header {
+  background: #ffffff;
+  padding: 12px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ppc-header-inner {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ppc-logo {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+.ppc-logo span {
+  color: #A81C0D;
+}
+
+.ppc-phone {
+  font-size: 18px;
+  font-weight: 700;
+  color: #A81C0D;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ppc-phone svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* --- Hero Section --- */
+.ppc-hero {
+  background: linear-gradient(135deg, #1a0a08 0%, #A81C0D 40%, #d4a574 70%, #f5c882 100%);
+  padding: 50px 0 60px;
+}
+
+.ppc-hero-inner {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.ppc-hero-text {
+  flex: 1;
+}
+
+.ppc-hero h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ppc-hero-sub {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.ppc-trust-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ppc-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ppc-trust-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* --- Form Container (in hero) --- */
+.ppc-form-wrapper {
+  flex: 0 1 420px;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  padding: 28px;
+}
+
+.ppc-form-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ppc-form-header h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  color: #333333;
+  margin: 0 0 6px;
+}
+
+.ppc-form-header p {
+  font-size: 14px;
+  color: #666666;
+  margin: 0;
+}
+
+/* --- Progress Bar --- */
+.ppc-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ppc-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ppc-progress-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.ppc-progress-dot.active {
+  background: #A81C0D;
+  color: #ffffff;
+}
+
+.ppc-progress-dot.done {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+.ppc-progress-line {
+  width: 30px;
+  height: 3px;
+  background: #e0e0e0;
+  transition: background 0.3s;
+}
+
+.ppc-progress-line.done {
+  background: #2e7d32;
+}
+
+/* --- Form Steps --- */
+.ppc-step {
+  display: none;
+}
+
+.ppc-step.active {
+  display: block;
+}
+
+.ppc-step-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  color: #333333;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+/* --- Coverage Type Buttons (Step 1) --- */
+.ppc-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ppc-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.ppc-type-btn:hover {
+  border-color: #A81C0D;
+  background: #fff5f4;
+}
+
+.ppc-type-btn.selected {
+  border-color: #A81C0D;
+  background: #fff5f4;
+}
+
+.ppc-type-btn:active {
+  transform: scale(0.97);
+}
+
+.ppc-type-btn svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* --- Form Fields --- */
+.ppc-field {
+  margin-bottom: 10px;
+}
+
+.ppc-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ppc-field input,
+.ppc-field select {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  background: #f9f9f9;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 12px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ppc-field input:focus,
+.ppc-field select:focus {
+  outline: none;
+  border-color: #A81C0D;
+  box-shadow: 0 0 0 3px rgba(168, 28, 13, 0.1);
+  background: #ffffff;
+}
+
+.ppc-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M1.4 0L6 4.6 10.6 0 12 1.4l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.ppc-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.ppc-field-row .ppc-field {
+  margin-bottom: 0;
+}
+
+/* --- Buttons --- */
+.ppc-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.ppc-btn-next,
+.ppc-btn-submit {
+  flex: 1;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: #A81C0D;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 48px;
+}
+
+.ppc-btn-next:hover,
+.ppc-btn-submit:hover {
+  background: #8a1609;
+}
+
+.ppc-btn-next:disabled,
+.ppc-btn-submit:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.ppc-btn-back {
+  flex: 0 0 auto;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666666;
+  background: none;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  min-height: 48px;
+}
+
+.ppc-btn-back:hover {
+  border-color: #999999;
+  color: #333333;
+}
+
+/* --- Security Note --- */
+.ppc-secure {
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ppc-secure svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* --- Form Status --- */
+.ppc-status {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+  min-height: 20px;
+}
+
+.ppc-status.success {
+  color: #2e7d32;
+}
+
+.ppc-status.error {
+  color: #c62828;
+}
+
+/* --- In-form trust signal --- */
+.ppc-trust-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #2e7d32;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.ppc-trust-inline svg {
+  flex-shrink: 0;
+}
+
+/* --- Microcopy beneath CTA --- */
+.ppc-microcopy {
+  text-align: center;
+  font-size: 13px;
+  color: #888888;
+  margin: 10px 0 0;
+}
+
+/* --- Alternative CTA (phone) --- */
+.ppc-alt-cta {
+  text-align: center;
+  font-size: 13px;
+  color: #666666;
+  margin: 10px 0 0;
+}
+
+.ppc-alt-cta a {
+  color: #A81C0D;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* --- Below-fold Content --- */
+.ppc-benefits {
+  padding: 50px 0;
+  background: #ffffff;
+}
+
+.ppc-benefits-inner {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ppc-benefits h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #333333;
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.ppc-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.ppc-benefit {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.ppc-benefit svg {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+}
+
+.ppc-benefit h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  color: #333333;
+  margin: 0 0 8px;
+}
+
+.ppc-benefit p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Testimonials --- */
+.ppc-testimonials {
+  padding: 50px 0;
+  background: #f9f9f9;
+}
+
+.ppc-testimonials-inner {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.ppc-testimonials h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #333333;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.ppc-testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.ppc-testimonial {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ppc-testimonial-stars {
+  color: #f9a825;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.ppc-testimonial blockquote {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0 0 12px;
+  font-style: italic;
+}
+
+.ppc-testimonial-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0;
+}
+
+/* --- Minimal Footer --- */
+.ppc-footer {
+  background: #222222;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.ppc-footer p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  margin: 0 0 4px;
+}
+
+.ppc-footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+/* --- Sticky Mobile CTA --- */
+.ppc-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #A81C0D;
+  padding: 12px 20px;
+  z-index: 200;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ppc-sticky-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.ppc-sticky-cta svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .ppc-hero-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ppc-form-wrapper {
+    flex: none;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .ppc-hero h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .ppc-hero-sub {
+    text-align: center;
+  }
+
+  .ppc-trust-row {
+    justify-content: center;
+  }
+
+  .ppc-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ppc-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ppc-hero {
+    padding: 30px 0 40px;
+  }
+
+  .ppc-hero h1 {
+    font-size: 24px;
+  }
+
+  .ppc-hero-sub {
+    font-size: 16px;
+  }
+
+  .ppc-form-wrapper {
+    padding: 24px 20px;
+  }
+
+  .ppc-type-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ppc-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ppc-sticky-cta {
+    display: block;
+  }
+
+  /* Add bottom padding so sticky CTA doesn't cover content */
+  .ppc-footer {
+    padding-bottom: 70px;
+  }
+
+  .ppc-phone {
+    font-size: 15px;
+  }
+
+  .ppc-logo {
+    font-size: 20px;
+  }
+}

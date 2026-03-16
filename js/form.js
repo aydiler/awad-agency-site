@@ -7,7 +7,8 @@
  * SETUP: Replace the URL below with your deployed Apps Script URL.
  */
 
-var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_STNqUhCetKIwB1Wh0fp8LAfVZOPCIcwWPfD3QHh3BZVskJBEcA3qUWo0DJcC4bY6DA/exec';
+var FORM_URL = 'https://api.web3forms.com/submit';
+var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
 
 (function () {
   'use strict';
@@ -72,15 +73,18 @@ var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz_STNqUhCetKIwB1
       source: window.location.pathname
     };
 
-    // Send to Apps Script
-    fetch(APPS_SCRIPT_URL, {
+    // Send to Web3Forms
+    data.access_key = FORM_KEY;
+    data.subject = 'New Quote Request — ' + (data.insuranceType || 'Insurance');
+
+    fetch(FORM_URL, {
       method: 'POST',
-      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     })
-    .then(function () {
-      // no-cors returns opaque response, so we assume success
+    .then(function (res) { return res.json(); })
+    .then(function (result) {
+      if (!result.success) throw new Error(result.message);
       showStatus(status, 'Thank you! We\'ll be in touch soon.', 'success');
       form.reset();
       // Track conversion in GTM/GA4 if dataLayer exists
