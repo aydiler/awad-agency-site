@@ -18,6 +18,19 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleSubmit);
     }
+
+    // Track click-to-call events for GA4 + GTM
+    var callBtns = document.querySelectorAll('a[href^="tel:"]');
+    for (var j = 0; j < callBtns.length; j++) {
+      callBtns[j].addEventListener('click', function () {
+        if (window.dataLayer) {
+          window.dataLayer.push({ event: 'call_button_click', source: window.location.pathname });
+        }
+        if (window.gtag) {
+          window.gtag('event', 'phone_click', { source: window.location.pathname });
+        }
+      });
+    }
   });
 
   function handleSubmit(e) {
@@ -93,6 +106,15 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
           event: 'form_submission',
           form_type: data.insuranceType || 'general',
           form_source: data.source
+        });
+      }
+      // GA4: fire as recommended generate_lead event
+      if (window.gtag) {
+        window.gtag('event', 'generate_lead', {
+          form_type: data.insuranceType || 'general',
+          form_source: data.source,
+          value: 50,
+          currency: 'USD'
         });
       }
     })

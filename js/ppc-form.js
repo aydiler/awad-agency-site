@@ -229,6 +229,7 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
   }
 
   function pushDataLayer(event, params) {
+    // GTM listens for {event: name, ...} object pushes
     if (window.dataLayer) {
       var data = { event: event };
       if (params) {
@@ -237,6 +238,22 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
         }
       }
       window.dataLayer.push(data);
+    }
+    // GA4 (gtag.js) needs the gtag('event', name, params) signature
+    if (window.gtag) {
+      var gaName = event;
+      var gaParams = params ? JSON.parse(JSON.stringify(params)) : {};
+      // Map internal event names to GA4 recommended/key event names
+      if (event === 'form_submission' || event === 'quote_submitted') {
+        gaName = 'generate_lead';
+        gaParams.value = gaParams.conversion_value || 250;
+        gaParams.currency = 'USD';
+      } else if (event === 'call_button_click') {
+        gaName = 'phone_click';
+      } else if (event === 'contact_info_provided') {
+        gaName = 'form_step_3_complete';
+      }
+      window.gtag('event', gaName, gaParams);
     }
   }
 })();
