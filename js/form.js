@@ -100,6 +100,23 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
       if (!result.success) throw new Error(result.message);
       showStatus(status, 'Thank you! We\'ll be in touch soon.', 'success');
       form.reset();
+      // Push user-provided data for Enhanced Conversions for Leads (ECL).
+      // Google's tag picks this up automatically when ECL is enabled on the customer.
+      var nameParts = (data.name || '').trim().split(/\s+/);
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'set_user_data',
+          user_data: {
+            email: (data.email || '').trim().toLowerCase(),
+            phone_number: (data.phone || '').replace(/[^0-9+]/g, ''),
+            address: {
+              first_name: nameParts[0] || '',
+              last_name: nameParts.slice(1).join(' ') || '',
+            },
+          },
+        });
+      }
+
       // Track conversion in GTM/GA4 if dataLayer exists
       if (window.dataLayer) {
         window.dataLayer.push({

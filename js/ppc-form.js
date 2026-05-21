@@ -194,6 +194,22 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
         status.textContent = 'Thank you! We\'ll call you shortly with your free quote.';
         status.className = 'ppc-status success';
       }
+      // Push user-provided data for Enhanced Conversions for Leads (ECL).
+      // Google's tag picks this up automatically when ECL is enabled on the customer.
+      // Hashing happens inside Google's tag; we send plain values.
+      var fullName = (formData.firstName || '') + ' ' + (formData.lastName || '');
+      var userData = {
+        email: (formData.email || '').trim().toLowerCase(),
+        phone_number: (formData.phone || '').replace(/[^0-9+]/g, ''),
+        address: {
+          first_name: (formData.firstName || formData.name || '').trim(),
+          last_name: (formData.lastName || '').trim(),
+        },
+      };
+      if (window.dataLayer) {
+        window.dataLayer.push({ event: 'set_user_data', user_data: userData });
+      }
+
       // Fire conversion events
       pushDataLayer('form_submission', {
         form_type: formData.insuranceType || 'auto',
