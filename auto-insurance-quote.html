@@ -18,9 +18,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // gtag('config') auto-fires page_view immediately (~600ms after doc start, verified)
     gtag('config', 'G-LMQ4K045DD');
-    // Force-fire page_view explicitly (don't rely on auto-fire) with beacon transport
-    gtag('event', 'page_view', { transport_type: 'beacon' });
   </script>
 
   <!-- Google Tag Manager (immediate, async — drives Google Ads conversion tags) -->
