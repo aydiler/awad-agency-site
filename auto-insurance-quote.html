@@ -4,19 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Tag Manager -->
+  <!-- PPC landing page: GA4 + GTM fire IMMEDIATELY (attribution > LCP).
+       Deferred loading lost the Fri 2026-05-22 paid click (GA4 fired at ~2s
+       but user bounced sooner). Each ad click costs $8+, so missing one
+       attribution costs more than the ~50-100ms LCP impact of inline tags. -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <script>function _gtm(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <link rel="preconnect" href="https://region1.google-analytics.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+
+  <!-- Google Analytics 4 (immediate, async) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LMQ4K045DD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LMQ4K045DD');
+    // Force-fire page_view explicitly (don't rely on auto-fire) with beacon transport
+    gtag('event', 'page_view', { transport_type: 'beacon' });
+  </script>
+
+  <!-- Google Tag Manager (immediate, async — drives Google Ads conversion tags) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P8755CJF');}
-  window.addEventListener('load',function(){setTimeout(function(){if('requestIdleCallback' in window){requestIdleCallback(_gtm)}else{_gtm()}},1000)})</script>
-
-  <!-- Google Analytics 4 (deferred) -->
-  <script>function _ga4(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-LMQ4K045DD';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config','G-LMQ4K045DD');}
-  window.addEventListener('load',function(){setTimeout(function(){if('requestIdleCallback' in window){requestIdleCallback(_ga4)}else{_ga4()}},1500)})</script>
-  <!-- End Google Analytics 4 -->
+  })(window,document,'script','dataLayer','GTM-P8755CJF');</script>
 
   <title>Free Auto Insurance Quote | Southgate, MI | Awad Agency</title>
   <meta name="description" content="Get a free auto insurance quote in Southgate, MI. Compare rates from multiple carriers. Licensed local agent, 5-star rated. Call (734) 304-0466.">

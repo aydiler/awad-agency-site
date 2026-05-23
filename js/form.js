@@ -27,7 +27,8 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
           window.dataLayer.push({ event: 'call_button_click', source: window.location.pathname });
         }
         if (window.gtag) {
-          window.gtag('event', 'phone_click', { source: window.location.pathname });
+          // beacon transport — survives the navigation when dialer opens
+          window.gtag('event', 'phone_click', { source: window.location.pathname, transport_type: 'beacon' });
         }
       });
     }
@@ -125,13 +126,14 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
           form_source: data.source
         });
       }
-      // GA4: fire as recommended generate_lead event
+      // GA4: fire as recommended generate_lead event (beacon survives navigation)
       if (window.gtag) {
         window.gtag('event', 'generate_lead', {
           form_type: data.insuranceType || 'general',
           form_source: data.source,
           value: 50,
-          currency: 'USD'
+          currency: 'USD',
+          transport_type: 'beacon'
         });
       }
     })

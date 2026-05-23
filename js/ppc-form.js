@@ -269,6 +269,8 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
       } else if (event === 'contact_info_provided') {
         gaName = 'form_step_3_complete';
       }
+      // beacon transport — events survive page unload (form-submit navigation, tel: dialer)
+      gaParams.transport_type = 'beacon';
       window.gtag('event', gaName, gaParams);
     }
   }
