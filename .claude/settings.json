@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s *)",
+      "Bash(.venv/bin/python scripts/dashboard.py*)",
+      "Bash(.venv/bin/python scripts/clarity_insights.py*)",
+      "Bash(.venv/bin/python scripts/ga4_bigquery_query.py*)",
+      "mcp__chrome-webdriver__chrome_navigate",
+      "mcp__chrome-webdriver__chrome_network_get",
+      "mcp__chrome-webdriver__chrome_network_start",
+      "mcp__chrome-webdriver__chrome_network_stop",
+      "mcp__chrome-webdriver__chrome_snapshot",
+      "mcp__chrome-webdriver__chrome_status",
+      "mcp__chrome-webdriver__chrome_list_frames",
+      "mcp__chrome-webdriver__chrome_disconnect",
+      "mcp__chrome-webdriver__chrome_get_text",
+      "mcp__chrome-webdriver__chrome_get_value",
+      "mcp__chrome-webdriver__chrome_get_attribute"
+    ]
+  }
+}

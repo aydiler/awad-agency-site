@@ -10,6 +10,23 @@
 var FORM_URL = 'https://api.web3forms.com/submit';
 var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
 
+// Discord lead-alert relay (AWS Lambda behind API GW). The browser pings this in parallel
+// with Web3Forms so a rich alert reaches Discord; the Discord webhook stays server-side in
+// the Lambda env (never exposed here). The token only deters trivial drive-by POSTs.
+var RELAY_URL = 'https://nj1dfmwzv0.execute-api.eu-central-1.amazonaws.com/form';
+var RELAY_TOKEN = 'awad-fwl-9f3k2';
+
+function pingRelay(payload) {
+  try {
+    var body = JSON.stringify(Object.assign({ token: RELAY_TOKEN }, payload));
+    // text/plain => CORS-simple request (no preflight); fire-and-forget.
+    var blob = new Blob([body], { type: 'text/plain' });
+    if (navigator.sendBeacon && navigator.sendBeacon(RELAY_URL, blob)) return;
+    fetch(RELAY_URL, { method: 'POST', body: body, keepalive: true, mode: 'no-cors',
+                       headers: { 'Content-Type': 'text/plain' } });
+  } catch (e) { /* non-blocking — Web3Forms email is the source of truth */ }
+}
+
 (function () {
   'use strict';
 
@@ -86,6 +103,10 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
       message: val(form, 'message'),
       source: window.location.pathname
     };
+
+    // Fire the Discord lead alert in parallel — independent of Web3Forms so an email
+    // outage never suppresses the alert. (Bots are already filtered by the honeypot above.)
+    pingRelay(data);
 
     // Send to Web3Forms
     data.access_key = FORM_KEY;

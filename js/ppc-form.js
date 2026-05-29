@@ -7,6 +7,21 @@
 var FORM_URL = 'https://api.web3forms.com/submit';
 var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
 
+// Discord lead-alert relay (AWS Lambda behind API GW). Pinged in parallel with Web3Forms so
+// a rich alert reaches Discord; the Discord webhook stays server-side in the Lambda env.
+var RELAY_URL = 'https://nj1dfmwzv0.execute-api.eu-central-1.amazonaws.com/form';
+var RELAY_TOKEN = 'awad-fwl-9f3k2';
+
+function pingRelay(payload) {
+  try {
+    var body = JSON.stringify(Object.assign({ token: RELAY_TOKEN }, payload));
+    var blob = new Blob([body], { type: 'text/plain' });  // text/plain => no CORS preflight
+    if (navigator.sendBeacon && navigator.sendBeacon(RELAY_URL, blob)) return;
+    fetch(RELAY_URL, { method: 'POST', body: body, keepalive: true, mode: 'no-cors',
+                       headers: { 'Content-Type': 'text/plain' } });
+  } catch (e) { /* non-blocking */ }
+}
+
 (function () {
   'use strict';
 
@@ -177,6 +192,10 @@ var FORM_KEY = 'd8096bb2-740d-4b94-9453-49744e70f986';
     if (status) { status.textContent = ''; status.className = 'ppc-status'; }
 
     formData.source = window.location.pathname;
+
+    // Fire the Discord lead alert in parallel — independent of Web3Forms.
+    pingRelay(formData);
+
     formData.access_key = FORM_KEY;
     formData.subject = 'New Quote Request — ' + (formData.insuranceType || 'Insurance');
 
