@@ -253,7 +253,7 @@ function pingRelay(payload) {
     })
     .catch(function () {
       if (status) {
-        status.textContent = 'Something went wrong. Please call us at (734) 304-0466.';
+        status.textContent = 'Something went wrong. Please call us at (313) 880-3249.';
         status.className = 'ppc-status error';
       }
     })
