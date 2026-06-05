@@ -85,6 +85,22 @@
   }
   </script>
 
+  <!-- First-party Google click-id capture (ad-blocker-proof; independent of _gcl_aw) -->
+  <script>
+  (function () {
+    try {
+      var p = new URLSearchParams(window.location.search);
+      var ids = ['gclid', 'gbraid', 'wbraid'];
+      for (var i = 0; i < ids.length; i++) {
+        var v = p.get(ids[i]);
+        if (v) {
+          document.cookie = 'awad_' + ids[i] + '=' + encodeURIComponent(v) +
+            ';max-age=' + (90 * 24 * 60 * 60) + ';path=/;SameSite=Lax;Secure';
+        }
+      }
+    } catch (e) { /* non-blocking */ }
+  })();
+  </script>
 </head>
 <body>
   
@@ -644,7 +660,7 @@
 
   <script src="js/nav.js"></script>
   
-  <script src="js/form.js?v=6"></script>
+  <script src="js/form.js?v=7"></script>
   
 </body>
 </html>

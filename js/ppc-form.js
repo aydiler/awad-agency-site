@@ -22,6 +22,21 @@ function pingRelay(payload) {
   } catch (e) { /* non-blocking */ }
 }
 
+// Read a first-party cookie (e.g. awad_gclid, captured on landing — ad-blocker-proof).
+function readCookie(name) {
+  var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// Per-submission id: shared dedup key between the GTM conversion (&oid=) and the
+// server-side ClickConversion upload (order_id), so the two never double-count.
+function genTxnId() {
+  try {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  } catch (e) {}
+  return 'awad-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+}
+
 (function () {
   'use strict';
 
@@ -192,6 +207,16 @@ function pingRelay(payload) {
     if (status) { status.textContent = ''; status.className = 'ppc-status'; }
 
     formData.source = window.location.pathname;
+    // Dedup key (shared with the GTM conversion's &oid=) + ad-click id for the server-side
+    // ClickConversion upload. The relay reads gclid/transaction_id from this payload.
+    formData.transaction_id = genTxnId();
+    formData.event_time = new Date().toISOString();
+    var gclid = readCookie('awad_gclid');
+    var gbraid = readCookie('awad_gbraid');
+    var wbraid = readCookie('awad_wbraid');
+    if (gclid)  formData.gclid  = gclid;
+    if (gbraid) formData.gbraid = gbraid;
+    if (wbraid) formData.wbraid = wbraid;
 
     // Fire the Discord lead alert in parallel — independent of Web3Forms.
     pingRelay(formData);
@@ -232,7 +257,8 @@ function pingRelay(payload) {
       // Fire conversion events
       pushDataLayer('form_submission', {
         form_type: formData.insuranceType || 'auto',
-        form_source: formData.source
+        form_source: formData.source,
+        transaction_id: formData.transaction_id
       });
       pushDataLayer('quote_submitted', {
         form_name: 'insurance_quote',
