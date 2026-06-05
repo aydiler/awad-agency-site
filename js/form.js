@@ -43,10 +43,9 @@ function pingRelay(payload) {
         if (window.dataLayer) {
           window.dataLayer.push({ event: 'call_button_click', source: window.location.pathname });
         }
-        if (window.gtag) {
-          // beacon transport — survives the navigation when dialer opens
-          window.gtag('event', 'phone_click', { source: window.location.pathname, transport_type: 'beacon' });
-        }
+        // GA4 phone_click + the Ads conversion fire from GTM off the dataLayer push above.
+        // (GTM's Google tag adopts measurement ID G-LMQ4K045DD, so a page-level
+        // gtag('event', ...) here is suppressed — GTM is the single source of truth.)
       });
     }
   });
@@ -139,22 +138,15 @@ function pingRelay(payload) {
         });
       }
 
-      // Track conversion in GTM/GA4 if dataLayer exists
+      // Notify GTM of the submission. GTM fires GA4 generate_lead + the Google Ads
+      // "Quote Form Submission" conversion off this dataLayer push. (GTM's Google tag
+      // adopts measurement ID G-LMQ4K045DD, so a page-level gtag('event','generate_lead')
+      // would be suppressed — GTM is the single source of truth.)
       if (window.dataLayer) {
         window.dataLayer.push({
           event: 'form_submission',
           form_type: data.insuranceType || 'general',
           form_source: data.source
-        });
-      }
-      // GA4: fire as recommended generate_lead event (beacon survives navigation)
-      if (window.gtag) {
-        window.gtag('event', 'generate_lead', {
-          form_type: data.insuranceType || 'general',
-          form_source: data.source,
-          value: 50,
-          currency: 'USD',
-          transport_type: 'beacon'
         });
       }
     })

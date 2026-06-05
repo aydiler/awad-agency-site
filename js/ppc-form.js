@@ -264,7 +264,10 @@ function pingRelay(payload) {
   }
 
   function pushDataLayer(event, params) {
-    // GTM listens for {event: name, ...} object pushes
+    // GTM listens for {event: name, ...} object pushes and fires the matching GA4 events
+    // (generate_lead, form_step_complete, form_step_3_complete, phone_click) AND Google Ads
+    // conversion tags. GTM's Google tag adopts measurement ID G-LMQ4K045DD, so a page-level
+    // gtag('event', ...) here would be suppressed — GTM is the single source of truth.
     if (window.dataLayer) {
       var data = { event: event };
       if (params) {
@@ -273,24 +276,6 @@ function pingRelay(payload) {
         }
       }
       window.dataLayer.push(data);
-    }
-    // GA4 (gtag.js) needs the gtag('event', name, params) signature
-    if (window.gtag) {
-      var gaName = event;
-      var gaParams = params ? JSON.parse(JSON.stringify(params)) : {};
-      // Map internal event names to GA4 recommended/key event names
-      if (event === 'form_submission' || event === 'quote_submitted') {
-        gaName = 'generate_lead';
-        gaParams.value = gaParams.conversion_value || 250;
-        gaParams.currency = 'USD';
-      } else if (event === 'call_button_click') {
-        gaName = 'phone_click';
-      } else if (event === 'contact_info_provided') {
-        gaName = 'form_step_3_complete';
-      }
-      // beacon transport — events survive page unload (form-submit navigation, tel: dialer)
-      gaParams.transport_type = 'beacon';
-      window.gtag('event', gaName, gaParams);
     }
   }
 })();
