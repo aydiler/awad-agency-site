@@ -1,3 +1,6 @@
 *.docx
 deploy.sh
 google-ads.yaml
+scripts/.call_notifier_state.json
+.zadarma.env
+__pycache__/
