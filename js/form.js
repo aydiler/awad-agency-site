@@ -177,7 +177,7 @@ function genTxnId() {
       }
     })
     .catch(function () {
-      showStatus(status, 'Something went wrong. Please call us at (734) 304-0466.', 'error');
+      showStatus(status, 'Something went wrong. Please call us at (313) 880-3249.', 'error');
     })
     .finally(function () {
       btn.disabled = false;
